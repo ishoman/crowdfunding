@@ -1,0 +1,25 @@
+{ "projects": [{
+    "title": "Waterproof Towels",
+    "owner": "Crap Corp",
+    "description": "Tired of your towels always getting wet when you use them. Now, with our patented hydrophobic 'technology', kiss those wet towel blues goodbye!",
+    "goal": 4000,
+    "swag": true,
+    "category": "idea"
+  },
+  {
+    "title": "My Great Movie",
+    "owner": "Jake from State Farm",
+    "description": "A gripping and informative documentary on the creation and distribution of khaki pants!",
+    "goal": 250000,
+    "swag": true,
+    "category": "project"
+  },
+  {
+    "title": "Turtle Rescue",
+    "owner": "Turtle Lovers of Western Detroit",
+    "description": "Too many turtles are anguishing on the streets of Detroit. Help us put an end to the stray turtle plight!",
+    "goal": 7569,
+    "swag": false,
+    "category": "charity"
+  }]
+}
