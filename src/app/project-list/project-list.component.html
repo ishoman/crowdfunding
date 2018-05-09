@@ -1,3 +1,16 @@
-<p>
-  project-list works!
-</p>
+<h2>Help!</h2>
+<div *ngFor="let project of projects | async">
+  <div class="card">
+    <div class="card-header">
+      <h4>{{project.title}}</h4>
+      <h6>By: {{project.owner}}</h6>
+    </div>
+    <div class="card-body">
+      <p>{{project.description}}</p>
+      <p>Goal: ${{project.goal}}</p>
+      <p *ngIf="project.swag">This Project comes with "free" stuff!</p>
+      <p>Category: {{project.category}}</p>
+    </div>
+  </div>
+  <br>
+</div>
