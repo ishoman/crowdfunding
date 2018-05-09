@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     component: ProjectListComponent
   },
   {
-    path: 'project-details/:id',
+    path: 'projects/:id',
     component: ProjectDetailsComponent
   },
   {

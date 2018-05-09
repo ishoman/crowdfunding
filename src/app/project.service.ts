@@ -14,4 +14,9 @@ export class ProjectService {
    getProjects() {
      return this.projects;
    }
+
+   getProjectbyId(projectId: string) {
+     return this.database.object('projects/' + projectId);
+   }
+
 }
