@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
+import { DonateComponent } from './donate/donate.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     ProjectListComponent,
     ProjectDetailsComponent,
     AdminComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    DonateComponent
   ],
   imports: [
   BrowserModule,

@@ -16,7 +16,12 @@ export class ProjectService {
    }
 
    getProjectbyId(projectId: string) {
+
      return this.database.object('projects/' + projectId);
    }
 
+   updateGoal(projectToUpdate, support, projectId){
+     let projectEntryInFirebase = this.getProjectbyId(projectId);
+     projectEntryInFirebase.update({goal: (projectToUpdate.goal - support)});
+   }
 }

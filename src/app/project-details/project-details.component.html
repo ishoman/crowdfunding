@@ -1,12 +1,18 @@
 <div class="card">
   <div class="card-header">
-    <h4>{{(projectToDisplay| async)?.title}}</h4>
-    <h6>By:{{(projectToDisplay| async)?.owner}}</h6>
+    <h4>{{projectToDisplay?.title}}</h4>
+    <h6>By:{{projectToDisplay?.owner}}</h6>
   </div>
   <div class="card-body">
-    <p>{{(projectToDisplay| async)?.description}}</p>
-    <p>Goal: ${{(projectToDisplay| async)?.goal}}</p>
-      <p *ngIf="(projectToDisplay | async)?.swag">This Project comes with "free" stuff!</p>
-    <p>Category: {{(projectToDisplay| async)?.category}}</p>
+    <p>{{projectToDisplay?.description}}</p>
+    <p>Goal: ${{projectToDisplay?.goal}}</p>
+    <p *ngIf="projectToDisplay?.swag">This Project comes with "free" stuff!</p>
+    <p>Category: {{projectToDisplay?.category}}</p>
   </div>
+  <input type="number" #newSupport>
+  <button (click)="supportCause(newSupport.value)">Support Cause</button>
+  <button (click)="saveDonation(projectToDisplay)">Save Donation</button>
+</div>
+<div >
+  <app-donate [childProjectToDisplay]="projectToDisplay" [childProjectId]="projectId"></app-donate>
 </div>

@@ -23,7 +23,26 @@ export class ProjectDetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectbyId(this.projectId);
+    this.projectService.getProjectbyId(this.projectId).subscribe(dataLastEmmittedFromObserver => {
+      this.projectToDisplay = new Project(dataLastEmmittedFromObserver.title,
+                                          dataLastEmmittedFromObserver.owner,
+                                          dataLastEmmittedFromObserver.description,
+                                          dataLastEmmittedFromObserver.goal,
+                                          dataLastEmmittedFromObserver.swag,
+                                          dataLastEmmittedFromObserver.category
+                                          )
+    })
   }
 
+  // supportCause(support: number) {
+  //   let modifiedGoal: number = parseInt(this.projectToDisplay.goal) - support;
+  //   if(confirm("Are you sure you want to donate $" + support)) {
+  //     this.projectService.updateGoal(modifiedGoal, this.projectToDisplay);
+  //     let projectEntryInFirebase = this.getProjectById(projectToDisplay.$key);
+  //     projectEntryInFirebase.goal.update(modifiedGoal);
+  //   }
+  // }
+  // saveDonation(projectToDisplay){
+  //   projectEntryInFirebase.goal.update(100);
+  // }
 }
