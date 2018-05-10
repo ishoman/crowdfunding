@@ -2,5 +2,6 @@
 
 <label>Doantion Amount</label>
 <input #newSupport>
-<button (click)="supportCause(childProjectToDisplay, newSupport.value)">donate</button>
+<button (click)="supportCause(childProjectToDisplay, newSupport.value); newSupport.value='
+'">donate</button>
 <br>

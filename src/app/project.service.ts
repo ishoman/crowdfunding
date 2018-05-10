@@ -9,19 +9,24 @@ export class ProjectService {
 
   constructor(private database: AngularFireDatabase) {
     this.projects = database.list('projects');
-   }
+  }
 
-   getProjects() {
-     return this.projects;
-   }
+  getProjects() {
+    return this.projects;
+  }
 
-   getProjectbyId(projectId: string) {
+  getProjectbyId(projectId: string) {
 
-     return this.database.object('projects/' + projectId);
-   }
+    return this.database.object('projects/' + projectId);
+  }
 
-   updateGoal(projectToUpdate, support, projectId){
-     let projectEntryInFirebase = this.getProjectbyId(projectId);
-     projectEntryInFirebase.update({goal: (projectToUpdate.goal - support)});
-   }
+  updateGoal(projectToUpdate, support, projectId){
+    let projectEntryInFirebase = this.getProjectbyId(projectId);
+    projectEntryInFirebase.update({goal: (projectToUpdate.goal - support)});
+  }
+
+  addProject(newProject: Project){
+    this.projects.push(newProject);
+  }
+
 }

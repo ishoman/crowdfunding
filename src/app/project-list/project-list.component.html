@@ -7,5 +7,35 @@
       <p>Category: {{project.category}}</p>
     </div>
   </div>
+</div>
+<br>
+<button (click)="showForm()">Add Your Own</button>
+<div *ngIf="viewForm" class="card">
+  <label for="title">Project Title:</label>
+  <input #newTitle type="text">
   <br>
+  <label for="owner">Project Owner(s):</label>
+  <input #newOwner type="text" name="" value="">
+  <br>
+  <label for="description" >Describe Your Project:</label>
+  <textarea #newDescription class="form-control" rows="3"></textarea>
+  <br>
+  <label for="goal">Monetary Goal:</label>
+  <input #newGoal type="number" name="" value="">
+  <br>
+  <label for="swag">Will supports get any swag?</label>
+  <select #newSwag>
+    <option value="" disabled hidden>Swag?</option>
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select>
+  <label for="">Select your project category:</label>
+  <select #newCategory>
+    <option value="" disabled hidden>Category</option>
+    <option value="project">Project</option>
+    <option value="charity">Charity</option>
+    <option value="idea">Idea</option>
+  </select>
+  <br>
+  <button (click)="submitProject(newTitle.value, newOwner.value, newDescription.value, newGoal.value, newSwag.value, newCategory.value)" class="button">Submit Project</button>
 </div>
