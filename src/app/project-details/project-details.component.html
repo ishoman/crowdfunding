@@ -8,6 +8,7 @@
     <p>Goal: ${{projectToDisplay?.goal}}</p>
     <p *ngIf="projectToDisplay?.swag">This Project comes with "free" stuff!</p>
     <p>Category: {{projectToDisplay?.category}}</p>
+    <button class="float-right button" (click)="follow(projectToDisplay)">Follow This Project</button>
 <div >
   <app-donate [childProjectToDisplay]="projectToDisplay" [childProjectId]="projectId"></app-donate>
 </div>

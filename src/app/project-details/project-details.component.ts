@@ -34,15 +34,7 @@ export class ProjectDetailsComponent implements OnInit {
     })
   }
 
-  // supportCause(support: number) {
-  //   let modifiedGoal: number = parseInt(this.projectToDisplay.goal) - support;
-  //   if(confirm("Are you sure you want to donate $" + support)) {
-  //     this.projectService.updateGoal(modifiedGoal, this.projectToDisplay);
-  //     let projectEntryInFirebase = this.getProjectById(projectToDisplay.$key);
-  //     projectEntryInFirebase.goal.update(modifiedGoal);
-  //   }
-  // }
-  // saveDonation(projectToDisplay){
-  //   projectEntryInFirebase.goal.update(100);
-  // }
+  follow(projectToDisplay: Project) {
+    this.projectService.followProject(projectToDisplay);
+  }
 }

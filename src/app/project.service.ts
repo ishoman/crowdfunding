@@ -6,6 +6,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class ProjectService {
   projects: FirebaseListObservable<any[]>;
+  followedProjects: Project[] = [];
 
   constructor(private database: AngularFireDatabase) {
     this.projects = database.list('projects');
@@ -27,6 +28,11 @@ export class ProjectService {
 
   addProject(newProject: Project){
     this.projects.push(newProject);
+  }
+
+  followProject(followedProject: Project) {
+    this.followedProjects.push(followedProject);
+    console.log(this.followedProjects);
   }
 
 }
